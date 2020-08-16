@@ -1,0 +1,27 @@
+<% @Language = Vbscript %>
+<% option explicit %>
+<% 
+	dim mail,pass
+	mail = request("email")
+	pass = request("passw") 
+	response.cookies("email") = mail
+	response.cookies("passw") = pass
+
+	set conn=Server.CreateObject("ADODB Connection")
+	Conn.Provider="Microsoft.Jet.OLEDB.4.0"
+	Conn.Open"C:/inetpub/wwwroot/minimini/up_data.mdb"
+	set rs=Server.CreateObject("ADODB.Recordset")
+	em=Request.form("email")
+	ps=Request.form("password")
+	sql="select email,password from up_table where email='"&em&"' AND password='"&ps&"'"
+	rs.Open sql,conn
+
+	if rs.EOF=True then
+		response.write("Login unsuccessful")
+	else
+		response.write("Login succesful")
+	end if 
+	rs.close
+	conn.close
+%>
+

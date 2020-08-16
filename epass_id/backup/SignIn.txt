@@ -1,0 +1,23 @@
+<html>
+<head>
+
+<title> Sign In </title>
+<link rel = "stylesheet" href = "style2.css">
+</head>
+
+<body>
+
+<div class ="sign-in">
+<img src="coronavirus.png">*
+<h1> Sign In</h1>
+<form>
+<input type="email" class = "input-box" placeholder="Your Email">
+<input type="password" class = "input-box" placeholder="Your Password">
+<p><span></p>
+<button type="button" class="signin-btn">Sign In</button>
+<hr>
+</form>
+</div>
+
+</body>
+</html>

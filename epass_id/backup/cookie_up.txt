@@ -1,0 +1,14 @@
+<% @Language = Vbscript %>
+<% option explicit %>
+<% 
+	dim fname,lname,mail,pass
+	fname = request("firstname")
+	lname = request("lastname")
+	mail = request("email")
+	pass = request("passw") 
+	response.cookies("firstname") = fname
+	response.cookies("lastname") = lname
+	response.cookies("email") = mail
+	response.cookies("passw") = pass
+%>
+
